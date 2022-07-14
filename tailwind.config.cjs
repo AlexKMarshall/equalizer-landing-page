@@ -53,6 +53,7 @@ module.exports = {
       "4xl": "var(--step-5)",
     },
     spacing: {
+      0: 0,
       "3xs": "var(--space-3xs)",
       "2xs": "var(--space-2xs)",
       xs: "var(--space-xs)",
