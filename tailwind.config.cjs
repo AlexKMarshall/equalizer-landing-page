@@ -27,6 +27,58 @@ const cluster = plugin(({ matchUtilities, theme }) => {
   );
 });
 
+const sidebar = plugin(
+  ({ matchUtilities, theme }) => {
+    const sidebar = {
+      flexGrow: 1,
+    };
+    const content = (value) => ({
+      flexBasis: 0,
+      flexGrow: 999,
+      minInlineSize: value,
+    });
+
+    matchUtilities(
+      {
+        "with-sidebar": (value) => ({
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "var(--sidebar-space-y, 1em) var(--sidebar-space-x, 1em)",
+
+          "&:not([data-sidebar-side='right']) > :first-child": sidebar,
+          "&:not([data-sidebar-side='right']) > :last-child": content(value),
+
+          "&[data-sidebar-side='right'] > :first-child": content(value),
+          "&[data-sidebar-side='right'] > :last-child": sidebar,
+        }),
+      },
+      { values: { ...theme("sidebarContentMinWidth"), DEFAULT: "50%" } }
+    );
+    matchUtilities(
+      {
+        "sidebar-space": (value) => ({
+          "--sidebar-space-x": value,
+          "--sidebar-space-y": value,
+        }),
+        "sidebar-space-x": (value) => ({
+          "--sidebar-space-x": value,
+        }),
+        "sidebar-space-y": (value) => ({
+          "--sidebar-space-y": value,
+        }),
+      },
+      { values: { ...theme("spacing"), DEFAULT: "1em" } }
+    );
+  },
+  {
+    theme: {
+      sidebarContentMinWidth: {
+        m: "30%",
+      },
+    },
+  }
+);
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html"],
@@ -62,7 +114,7 @@ module.exports = {
       lg: "var(--space-l)",
       xl: "var(--space-xl)",
       "2xl": "var(--space-2xl)",
-      "3xl": "var(--space-2xl)",
+      "3xl": "var(--space-3xl)",
       "3xs-2xs": "var(--space-3xs-2xs)",
       "2xs-xs": "var(--space-2xs-xs)",
       "xs-s": "var(--space-xs-s)",
@@ -74,5 +126,5 @@ module.exports = {
       "s-l": "var(--space-s-l)",
     },
   },
-  plugins: [stack, cluster],
+  plugins: [stack, cluster, sidebar],
 };
