@@ -18,19 +18,26 @@ const stack = plugin(({ matchUtilities, theme }) => {
 module.exports = {
   content: ["./index.html"],
   theme: {
+    colors: {
+      white: "hsl(20deg 33% 98%)",
+      black: "hsl(244deg 23% 12%)",
+      cyan: "hsl(177deg 68% 64%)",
+      orange: "hsl(12deg 94% 65%)",
+      yellow: "hsl(33deg 100% 70%)",
+    },
     fontFamily: {
       sans: ["'IBM Plex Sans'", ...defaultTheme.fontFamily.sans],
     },
     fontWeight: { normal: 400, bold: 700 },
     fontSize: {
-      "-2": "var(--step--2)",
-      "-1": "var(--step--1)",
-      0: "var(--step-0)",
-      1: "var(--step-1)",
-      2: "var(--step-2)",
-      3: "var(--step-3)",
-      4: "var(--step-4)",
-      5: "var(--step-5)",
+      xs: "var(--step--2)",
+      s: "var(--step--1)",
+      base: "var(--step-0)",
+      l: "var(--step-1)",
+      xl: "var(--step-2)",
+      "2xl": "var(--step-3)",
+      "3xl": "var(--step-4)",
+      "4xl": "var(--step-5)",
     },
     spacing: {
       "3xs": "var(--space-3xs)",
