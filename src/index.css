@@ -65,7 +65,7 @@
   h1,
   h2 {
     --measure: 30ch;
-    @apply leading-none font-bold;
+    @apply font-bold leading-none;
   }
 
   h1 {
