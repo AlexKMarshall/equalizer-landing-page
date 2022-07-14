@@ -61,6 +61,20 @@
     /* Custom pairs */
     --space-s-l: clamp(1rem, calc(0.41rem + 2.93vw), 2.5rem);
   }
+
+  h1,
+  h2 {
+    --measure: 30ch;
+    @apply leading-none font-bold;
+  }
+
+  h1 {
+    @apply text-5;
+  }
+
+  h2 {
+    @apply text-4;
+  }
 }
 
 @tailwind components;
