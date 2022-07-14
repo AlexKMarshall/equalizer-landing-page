@@ -83,3 +83,9 @@
 
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .wrapper {
+    @apply px-m;
+  }
+}

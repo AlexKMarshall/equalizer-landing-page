@@ -14,6 +14,19 @@ const stack = plugin(({ matchUtilities, theme }) => {
   );
 });
 
+const cluster = plugin(({ matchUtilities, theme }) => {
+  matchUtilities(
+    {
+      cluster: (value) => ({
+        display: "flex",
+        flexWrap: "wrap",
+        gap: value,
+      }),
+    },
+    { values: { ...theme("spacing"), DEFAULT: "1em" } }
+  );
+});
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html"],
@@ -33,7 +46,7 @@ module.exports = {
       xs: "var(--step--2)",
       s: "var(--step--1)",
       base: "var(--step-0)",
-      l: "var(--step-1)",
+      lg: "var(--step-1)",
       xl: "var(--step-2)",
       "2xl": "var(--step-3)",
       "3xl": "var(--step-4)",
@@ -45,7 +58,7 @@ module.exports = {
       xs: "var(--space-xs)",
       s: "var(--space-s)",
       m: "var(--space-m)",
-      l: "var(--space-l)",
+      lg: "var(--space-l)",
       xl: "var(--space-xl)",
       "2xl": "var(--space-2xl)",
       "3xl": "var(--space-2xl)",
@@ -60,5 +73,5 @@ module.exports = {
       "s-l": "var(--space-s-l)",
     },
   },
-  plugins: [stack],
+  plugins: [stack, cluster],
 };

@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,8 +25,11 @@
     <title>Equalizer</title>
   </head>
   <body>
+    <header class="wrapper mt-m">
+      <img src="/assets/logo.svg" alt="Equalizer" />
+    </header>
     <main>
-      <div class="stack">
+      <div class="wrapper my-xl stack-lg">
         <h1>We make your music sound extraordinary.</h1>
         <p>
           A system audio equalizer specifically designed for Android and iOS.
@@ -30,7 +38,7 @@
           control, reverb, and more!
         </p>
       </div>
-      <div class="stack">
+      <div class="rounded-xl bg-orange px-lg py-xl text-white stack">
         <h2>Premium EQ</h2>
         <p>
           Get expert-level control with a robust equalizer, volume mixer, and
@@ -50,16 +58,31 @@
         </button>
       </div>
     </main>
-    <footer>
-      <p>All rights reserved &copy; Equalizer 2021</p>
-      <p>
-        Have any problems? Contact us via social media or email us at
-        <a href="mailto:equalizer@example.com">equalizer@example.com</a>
-      </p>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Twitter</a></li>
+    <footer class="wrapper my-2xl stack-2xl">
+      <div class="items-start stack-lg">
+        <img src="/assets/logo.svg" alt="Equalizer" />
+        <div>
+          <p>All rights reserved &copy; Equalizer 2021</p>
+          <p>
+            Have any problems? Contact us via social media or email us at
+            <a class="font-bold" href="mailto:equalizer@example.com"
+              >equalizer@example.com</a
+            >
+          </p>
+        </div>
+      </div>
+      <ul class="cluster-m">
+        <li>
+          <a href="#"><img src="/assets/icon-facebook.svg" alt="Facebook" /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="/assets/icon-instagram.svg" alt="Instagram"
+          /></a>
+        </li>
+        <li>
+          <a href="#"><img src="/assets/icon-twitter.svg" alt="Twitter" /></a>
+        </li>
       </ul>
     </footer>
     <script type="module" src="/src/main.ts"></script>
