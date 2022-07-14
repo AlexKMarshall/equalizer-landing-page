@@ -1,4 +1,18 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
+
+const stack = plugin(({ matchUtilities, theme }) => {
+  matchUtilities(
+    {
+      stack: (value) => ({
+        display: "flex",
+        flexDirection: "column",
+        gap: value,
+      }),
+    },
+    { values: { ...theme("spacing"), DEFAULT: "1em" } }
+  );
+});
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -39,5 +53,5 @@ module.exports = {
       "s-l": "var(--space-s-l)",
     },
   },
-  plugins: [],
+  plugins: [stack],
 };
