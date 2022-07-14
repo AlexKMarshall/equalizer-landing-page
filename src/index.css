@@ -77,11 +77,18 @@
   }
 
   body {
-    @apply bg-white text-black;
+    @apply bg-white text-base text-black;
   }
 }
 
 @tailwind components;
+
+@layer components {
+  .highlight-box {
+    max-width: 28rem;
+  }
+}
+
 @tailwind utilities;
 
 @layer utilities {
