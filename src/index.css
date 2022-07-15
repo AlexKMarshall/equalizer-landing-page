@@ -101,6 +101,11 @@
         url("./assets/bg-main-desktop.png");
     }
   }
+
+  button,
+  a {
+    @apply transition-colors;
+  }
 }
 
 @tailwind components;
