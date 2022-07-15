@@ -121,4 +121,8 @@
     max-inline-size: theme(screens.lg);
     @apply mx-auto;
   }
+
+  .responsive-measure {
+    max-inline-size: clamp(23rem, 75%, 50rem);
+  }
 }
