@@ -60,6 +60,7 @@
 
     /* Custom pairs */
     --space-s-l: clamp(1rem, calc(0.41rem + 2.93vw), 2.5rem);
+    --space-l-3xl: clamp(2rem, calc(-0.15rem + 10.73vw), 7.5rem);
   }
 
   h1,
@@ -84,6 +85,28 @@
 @tailwind components;
 
 @layer components {
+  .hero-grid {
+    display: grid;
+    grid-template-rows: auto var(--overlap-size, 0) auto;
+    grid-template-columns: 0 1fr 0;
+  }
+
+  .hero-grid > :first-child {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+  }
+
+  .hero-grid > :last-child {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+  }
+
+  @media screen(sm) {
+    .hero-grid {
+      --overlap-size: clamp(3rem, calc(-54.5rem + 143.75vw), 37.5rem);
+    }
+  }
+
   .highlight-box {
     max-width: 28rem;
   }

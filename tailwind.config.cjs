@@ -124,6 +124,7 @@ module.exports = {
       "xl-2xl": "var(--space-xl-2xl)",
       "2xl-3xl": "var(--space-2xl-3xl)",
       "s-l": "var(--space-s-l)",
+      "l-3xl": "var(--space-l-3xl)",
     },
   },
   plugins: [stack, cluster, sidebar],
