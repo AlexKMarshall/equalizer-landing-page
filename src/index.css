@@ -91,14 +91,14 @@
   @media screen(sm) {
     body {
       background-image: url("/assets/bg-pattern-1.svg"),
-        url("./assets/bg-main-tablet.png");
+        url("/assets/bg-main-tablet.png");
     }
   }
 
   @media screen(lg) {
     body {
       background-image: url("/assets/bg-pattern-1.svg"),
-        url("./assets/bg-main-desktop.png");
+        url("/assets/bg-main-desktop.png");
     }
   }
 
