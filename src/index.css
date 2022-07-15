@@ -80,6 +80,10 @@
   body {
     @apply bg-white text-base text-black;
   }
+
+  body {
+    @apply bg-[url("./assets/bg-main-mobile.png")] bg-no-repeat before:-z-10 sm:bg-[url("./assets/bg-main-tablet.png")] lg:bg-[url("./assets/bg-main-desktop.png")];
+  }
 }
 
 @tailwind components;
