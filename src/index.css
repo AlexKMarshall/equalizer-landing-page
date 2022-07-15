@@ -82,7 +82,7 @@
   }
 
   body {
-    background-image: url("./assets/bg-main-mobile.png");
+    background-image: none, url("./assets/bg-main-mobile.png");
     background-repeat: no-repeat;
     background-position: top right, top center;
     background-size: 22%, auto;
@@ -113,6 +113,12 @@
     @apply relative grid;
     @apply before:absolute before:top-[15%] before:bottom-[15%] before:left-0 before:right-0 before:-z-10 before:rounded-xl;
     @apply before:bg-black sm:before:top-[25%];
+  }
+
+  .hero-grid:before {
+    background-image: url("./assets/bg-pattern-2.svg");
+    background-repeat: no-repeat;
+    background-position: top theme(spacing.m) center;
   }
 
   .hero-grid > :first-child {
