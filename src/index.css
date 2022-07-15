@@ -82,7 +82,24 @@
   }
 
   body {
-    @apply bg-[url("./assets/bg-main-mobile.png")] bg-no-repeat before:-z-10 sm:bg-[url("./assets/bg-main-tablet.png")] lg:bg-[url("./assets/bg-main-desktop.png")];
+    background-image: url("./assets/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top right, top center;
+    background-size: 22%, auto;
+  }
+
+  @media screen(sm) {
+    body {
+      background-image: url("./assets/bg-pattern-1.svg"),
+        url("./assets/bg-main-tablet.png");
+    }
+  }
+
+  @media screen(lg) {
+    body {
+      background-image: url("./assets/bg-pattern-1.svg"),
+        url("./assets/bg-main-desktop.png");
+    }
   }
 }
 
