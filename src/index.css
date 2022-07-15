@@ -60,6 +60,7 @@
 
     /* Custom pairs */
     --space-s-l: clamp(1rem, calc(0.41rem + 2.93vw), 2.5rem);
+    --space-l-3xl: clamp(2rem, calc(-0.15rem + 10.73vw), 7.5rem);
   }
 
   h1,
@@ -84,8 +85,32 @@
 @tailwind components;
 
 @layer components {
+  .hero-grid {
+    grid-template-rows: auto var(--overlap-size, 0) auto;
+    grid-template-columns: 0 1fr 0;
+
+    @apply relative grid before:absolute before:top-[15%] before:bottom-[15%] before:left-0 before:right-0 before:-z-10 before:rounded-xl before:bg-black;
+  }
+
+  .hero-grid > :first-child {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+  }
+
+  .hero-grid > :last-child {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+  }
+
+  @media screen(sm) {
+    .hero-grid {
+      /* Trial and error clamp from utopia to give a smooth overlap */
+      --overlap-size: clamp(3rem, calc(-44.08rem + 117.71vw), 31.25rem);
+    }
+  }
+
   .highlight-box {
-    max-width: 28rem;
+    max-width: 25rem;
   }
 }
 
@@ -93,6 +118,9 @@
 
 @layer utilities {
   .wrapper {
-    @apply px-m;
+    --padding-x: theme(spacing.m);
+    width: calc(100% - 2 * var(--padding-x));
+    max-inline-size: theme(screens.lg);
+    @apply mx-auto;
   }
 }
