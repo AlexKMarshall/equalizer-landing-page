@@ -89,7 +89,9 @@
     grid-template-rows: auto var(--overlap-size, 0) auto;
     grid-template-columns: 0 1fr 0;
 
-    @apply relative grid before:absolute before:top-[15%] before:bottom-[15%] before:left-0 before:right-0 before:-z-10 before:rounded-xl before:bg-black;
+    @apply relative grid;
+    @apply before:absolute before:top-[15%] before:bottom-[15%] before:left-0 before:right-0 before:-z-10 before:rounded-xl;
+    @apply before:bg-black sm:before:top-[25%];
   }
 
   .hero-grid > :first-child {
@@ -105,12 +107,8 @@
   @media screen(sm) {
     .hero-grid {
       /* Trial and error clamp from utopia to give a smooth overlap */
-      --overlap-size: clamp(3rem, calc(-44.08rem + 117.71vw), 31.25rem);
+      --overlap-size: clamp(3rem, calc(-33.67rem + 91.67vw), 25rem);
     }
-  }
-
-  .highlight-box {
-    max-width: 25rem;
   }
 }
 
