@@ -84,7 +84,7 @@
   body {
     background-image: none, url("/assets/bg-main-mobile.png");
     background-repeat: no-repeat;
-    background-position: top right, top center;
+    background-position: top calc(theme(spacing.lg) * -1) right, top center;
     background-size: 22%, auto;
   }
 
